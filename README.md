@@ -17,8 +17,6 @@ And in your `Gemfile`:
     gem "openbanana"
 
 
-Make sure you have a source for either `maestro` or `dogwood` in your Gemfile.```
-
 ### Environment variables
 
 * `DB_USER` overrides the default user (root) to grant privileges
