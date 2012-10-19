@@ -11,7 +11,7 @@ module Openbanana
 
   # load config YML file
   def self.load_yml(filename = 'database.yml')
-    YAML.load_file(File.join(Rails.root, 'config', filename))
+    YAML.load(ERB.new(File.read(File.join(Rails.root, 'config', filename))).result)
   end
 
   # read config YML for environment
