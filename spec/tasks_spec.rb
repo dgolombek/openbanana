@@ -20,7 +20,6 @@ describe Openbanana do
     end
 
     it 'should load the shards.yml file on Rails.root/config' do
-      tmp = Object.new
       File.should_receive(:read).with(Rails.root + '/config/shards.yml').and_return("")
       YAML.should_receive(:load).and_return({})
       Openbanana.load_yml('shards.yml')
