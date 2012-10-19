@@ -1,5 +1,7 @@
 
 require 'spec_helper'
+require 'erb'
+require 'yaml'
 
 describe 'db:grant' do
 end
@@ -12,12 +14,15 @@ describe Openbanana do
 
   describe '#load_yml' do
     it 'should load the database.yml file on Rails.root/config' do
-      YAML.should_receive(:load_file).with(Rails.root + '/config/database.yml').and_return({})
+      File.should_receive(:read).with(Rails.root + '/config/database.yml').and_return("")
+      YAML.should_receive(:load).and_return({})
       Openbanana.load_yml
     end
 
     it 'should load the shards.yml file on Rails.root/config' do
-      YAML.should_receive(:load_file).with(Rails.root + '/config/shards.yml').and_return({})
+      tmp = Object.new
+      File.should_receive(:read).with(Rails.root + '/config/shards.yml').and_return("")
+      YAML.should_receive(:load).and_return({})
       Openbanana.load_yml('shards.yml')
     end
   end

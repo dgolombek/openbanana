@@ -4,8 +4,8 @@ require File.expand_path('../lib/openbanana/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["R. Tyler Croy"]
   gem.email         = ["tyler@monkeypox.org"]
-  gem.description   = %q{Simple gem to handle creating DB grans}
-  gem.summary       = %q{Simple gem to handle creating DB grans}
+  gem.description   = %q{Simple gem to handle creating DB grants}
+  gem.summary       = %q{Simple gem to handle creating DB grants}
   gem.homepage      = "https://github.com/lookout/openbanana"
 
   gem.files         = `git ls-files`.split($\)
